@@ -6,11 +6,6 @@ class Shelf extends React.Component {
 
     state = { shelfChoice: ''}
 
-    // handleChange = (event) => {
-    //     console.log(event.target.value)
-    //     // this.props.shelfing(filteredBook, event.target.value)
-    // }
-
     render() {
         return (
             <div className="bookshelf">
@@ -24,7 +19,6 @@ class Shelf extends React.Component {
                                         <div className="book-top">
                                             <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url(' + filteredBook.imageLinks.thumbnail + ')' }}></div>
                                             <div className="book-shelf-changer">
-                                                {/* <select onChange={this.handleChange}> */}
                                                 <select onChange={(event) => this.props.shelfing(filteredBook, event.target.value, this.props.libraryData)} value={filteredBook.shelf}>
                                                     <option value="move" disabled>Move to...</option>
                                                     <option value="currentlyReading">Currently Reading</option>
